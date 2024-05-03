@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import SearchBar from "./components/SearchBar/SearchBar";
 import JobCard from "./components/JobCard/JobCard";
@@ -36,7 +35,14 @@ function App() {
 
   return (
     <div>
-      <SearchBar />
+      <div style={{margin:'20px'}}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6} md={4}>
+            <SearchBar job={jobData.jdList} />
+          </Grid>
+        </Grid>
+      </div>
+
       <Grid container spacing={3}>
         {jobData.jdList.map((job) => (
           <Grid item xs={12} sm={6} md={4} key={job.jdUid}>
